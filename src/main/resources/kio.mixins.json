@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "net.winterhurricane.kio.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"ExampleMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
