@@ -1,4 +1,4 @@
-package net.winterhurricane.kio.screen;
+package net.winterhurricane.kio.screen.kioscreenhandlers.backpack;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -7,38 +7,24 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
+import net.winterhurricane.kio.screen.KIOScreenHandlers;
 
-public class BackpackScreenHandler extends ScreenHandler {
+public class Tier1LeftScreenHandler extends ScreenHandler {
     private final Inventory inventory;
 
-    public BackpackScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory, new SimpleInventory(54));
+    public Tier1LeftScreenHandler(int syncId, PlayerInventory playerInventory) {
+        this(syncId, playerInventory, new SimpleInventory(6));
     }
 
-    public BackpackScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory){
+    public Tier1LeftScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory){
         super(KIOScreenHandlers.BACKPACK_SCREEN_HANDLER, syncId);
-        checkSize(inventory, 54);
+        checkSize(inventory, 6);
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);
-        for (int j = 0; j < 6; ++j) {
-            for (int i = 0; i < 9; ++i) {
-                this.addSlot(new Slot(inventory, i + j * 9, 8 + i * 18, -10 + j * 18));
-            }
-        }
-        addPlayerInventory(playerInventory);
-        addPlayerHotbar(playerInventory);
-    }
-
-    private void addPlayerInventory(PlayerInventory playerInventory) {
         for (int j = 0; j < 3; ++j) {
-            for (int i = 0; i < 9; ++i){
-                this.addSlot(new Slot(playerInventory, i + j * 9 + 9, 8 + i * 18, 112 + j * 18));
+            for (int i = 0; i < 2; ++i) {
+                this.addSlot(new Slot(inventory, i + j * 2, 8 + i * 18, 8 + j * 18));
             }
-        }
-    }
-    private void addPlayerHotbar(PlayerInventory playerInventory) {
-        for (int i = 0; i < 9; ++i){
-            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 170));
         }
     }
 

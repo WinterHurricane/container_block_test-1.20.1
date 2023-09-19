@@ -12,11 +12,11 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
-import net.winterhurricane.kio.screen.BackpackScreenHandler;
+import net.winterhurricane.kio.screen.kioscreenhandlers.backpack.BackpackScreenHandler;
 import org.jetbrains.annotations.Nullable;
 
 public class BackpackBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
-    private DefaultedList<ItemStack> inventory = DefaultedList.ofSize(54, ItemStack.EMPTY);
+    private DefaultedList<ItemStack> inventory = DefaultedList.ofSize(70, ItemStack.EMPTY);
 
     public BackpackBlockEntity(BlockPos pos, BlockState state) {
         super(KIOBlockEntities.BACKPACK_BLOCK_ENTITY, pos, state);
@@ -24,7 +24,7 @@ public class BackpackBlockEntity extends BlockEntity implements NamedScreenHandl
 
     @Override
     public int size() {
-        return 54;
+        return 70;
     }
 
     @Override

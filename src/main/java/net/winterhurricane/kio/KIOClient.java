@@ -2,7 +2,7 @@ package net.winterhurricane.kio;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
-import net.winterhurricane.kio.screen.BackpackScreen;
+import net.winterhurricane.kio.screen.kioscreens.backpack.BackpackScreen;
 import net.winterhurricane.kio.screen.KIOScreenHandlers;
 
 public class KIOClient implements ClientModInitializer {
